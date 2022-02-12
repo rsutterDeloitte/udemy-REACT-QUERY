@@ -63,11 +63,11 @@ export function Calendar(): ReactElement {
           appointments={appointments[1]}
         />
         {/* the rest of the days will follow */}
-        {[...Array(monthYear.lastDate)].map((_, i) =>
-          i > 0 ? (
+        {[...Array(monthYear.lastDate)].map((_, i) => {
+          return i > 0 ? (
             <DateBox key={i} date={i + 1} appointments={appointments[i + 1]} />
-          ) : null,
-        )}
+          ) : null;
+        })}
       </Grid>
       <UserAppointments />
     </Box>
